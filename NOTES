@@ -385,3 +385,47 @@ To overcome that problem we need to use the map method
 to list the array elements
 
 ------------------------------------------------------------------------------------------------
+
+MAPPING -- returns a array  ,goes thorugh every element in array
+
+displaying the arry items using maps
+------------------------------------------
+
+function App() {
+
+  
+  return (
+    <Fruits></Fruits>
+  )
+}
+
+export default App
+
+-------------------------------------------
+const Fruits = () => {
+    
+    const fruit=["apple","mango","orange"]
+  return (
+    <div>{ fruit.map((f)=>{              <---- mapping every fruits in fruit array
+        return<ul>
+            <li key={f}>{f}</li>
+        </ul>
+    })}
+      
+    </div>
+  )
+}
+
+export default Fruits
+-----------------------------------------------
+output
+
+apple
+mango
+orange
+
+===============================================================================
+
+Mapping though the Objects
+
+----------------------------------------------------------------------------------------------

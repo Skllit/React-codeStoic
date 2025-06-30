@@ -1,14 +1,12 @@
 import FirstComp from "./componants/FirstComp"
+import Fruits from "./componants/Fruits"
 
  
 function App() {
-    const person ={
-        name:'bob',
-        age:'12'
-    }
+
   
   return (
-    <FirstComp person={person}></FirstComp>
+    <Fruits></Fruits>
   )
 }
 
