@@ -265,3 +265,37 @@ we can also use DESTRUCTURING OF prop to make it more useful
 
 ---------------------------------------------------------------------------------------------------
 
+Destructuring props
+
+------------------------------------------------------------
+ 1.we pass the prop where we render the component
+ <comp name="message" message1="abc" message2="bcd"></comp>
+
+ 2.we use the prop in the componant
+ 
+ function comp(prop){
+
+  return <h1>{prop.name}</h1>
+ }
+ 
+ so we can destructure the prop this way
+
+ 
+ function comp(prop){
+  const {name,message1,message2}=prop
+
+  return <h1>{name}</h1> ----- and use the destructured prop directly
+ }
+
+ NOTE!
+ make sure the passed prop name and destructured prop name should be same
+
+ <comp name="message" message1="abc" message2="bcd"></comp>
+
+  const {name,message1,message2}=prop
+
+  also while destructuring we can just take the data needed  and skip the rest
+
+   const {name,message1 }=prop
+
+   ----------------------------------------------------------------------------------------------
