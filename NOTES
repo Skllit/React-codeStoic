@@ -49,17 +49,22 @@ How it works when
 2.Main.jsx
 3.App.jsx
 
-The main.jsx is the starting point
+1.The main.jsx is the starting point
 where it takes the (id=root) from the index.html -which is the main html file 
+
+
  <div id="root"></div>
 
-Renders the component called as APP.jsx insidet that root index.html
+
+2. Renders the component called as APP.jsx inside that root index.html
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
 )
 
-where as the app componant--APP.jsx
+3. where as the app componant--APP.jsx
 has the basic componant 
 -----------------------------
 function App() {
@@ -71,5 +76,6 @@ function App() {
 }
 export default App
 ------------------------------------
+
 
 
