@@ -429,3 +429,63 @@ orange
 Mapping though the Objects
 
 ----------------------------------------------------------------------------------------------
+
+const Fruits = () => {
+    
+    const fruit=[
+       { name:"orange",price:20},
+       { name:"apple",price:20},
+       { name:"mango",price:20},
+    ]
+  return (
+    <div>{ fruit.map((f)=>{ 
+        return<ul>
+            <li key={f.name}>{f.name} is RS:{f.price}</li>
+        </ul>
+    })}
+      
+    </div>
+  )
+}
+-------------------------------------------------------------------------------------------
+
+conditinal rendering
+
+--------------------------------------------------------------------------------------
+
+coco.jsx --->renders comp1 if display=true renders comp1 else render comp2
+hellow.jsx---->says hello
+World.jsx---->says welcome
+
+function Coco() {
+
+const dis=false;
+if(dis)
+{
+    return <Hellow></Hellow>;
+}else{
+    return <World></World>;
+}
+}
+
+export default Coco
+
+---------------------------------
+export default function Hellow() {
+  return (
+    <div>
+      <h1>hellow</h1>
+    </div>
+  )
+}
+----------------------------------
+function World() {
+  return (
+    <div>
+      <h1>World</h1>
+    </div>
+  )
+}
+
+export default World
+

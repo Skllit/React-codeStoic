@@ -1,12 +1,12 @@
 import FirstComp from "./componants/FirstComp"
 import Fruits from "./componants/Fruits"
-
+import Coco from "./componants/Coco"
  
 function App() {
 
   
   return (
-    <Fruits></Fruits>
+    <Coco></Coco>
   )
 }
 
