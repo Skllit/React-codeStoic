@@ -298,4 +298,89 @@ Destructuring props
 
    const {name,message1 }=prop
 
+--------------------------------------------
+   we can also destructuer the prop
+   where we use the props
+
+ 1.we pass the prop where we render the component
+ <comp name="message" message1="abc" message2="bcd"></comp>
+
+ 2.we use the prop in the componant
+ 
+ function comp({name,message1,message2}){   <--------- destructuring here
+
+  return <h1>{prop.name}</h1>
+ }
+
+
+
+
+
    ----------------------------------------------------------------------------------------------
+
+   Passing arrays and objects and objects as props
+
+   ---------------------------------------------------------------------------------------
+
+   ARRAYS
+
+======================================= passing array as prop
+
+ 
+function App() {
+    const array=[1,2,3]
+  
+  return (
+    <FirstComp array={array}></FirstComp>
+  )
+}
+
+export default App
+
+=============================================== using arrays
+
+const FirstComp = (props) => {
+
+  return (
+    <div>
+        <h1>hellow {props.array}</h1>
+    </div>
+  )
+}
+
+export default FirstComp
+
+
+--------------------------------------------------------------------------------------
+Objects
+
+============================================ passing objects as prop
+function App() {
+    const person ={
+        name:'bob',
+        age:'12'
+    }
+  
+  return (
+    <FirstComp person={person}></FirstComp>
+  )
+}
+
+================================================ usinng the props
+
+const FirstComp = (props) => {
+
+  return (
+    <div>
+        <h1>hellow {props.person.name} is  {props.person.age} years old</h1>
+    </div>
+  )
+}
+
+=========================================================================
+
+when we use the arrays as prop and when we render the data in array we see the array are displayed as a string
+
+To overcome that problem we need to use the map method
+to list the array elements
+

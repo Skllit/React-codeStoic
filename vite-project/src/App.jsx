@@ -2,9 +2,13 @@ import FirstComp from "./componants/FirstComp"
 
  
 function App() {
+    const person ={
+        name:'bob',
+        age:'12'
+    }
   
   return (
-    <FirstComp></FirstComp>
+    <FirstComp person={person}></FirstComp>
   )
 }
 
