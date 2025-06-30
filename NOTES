@@ -180,3 +180,88 @@ let name ="BOB";
 {name}
 
 ----------------------------------------------------------------------------------------
+componants can be reusable 
+meaning it can be used multiple times so that there can be modularity be mainatined
+which makes the code look cleaner
+
+in simple way
+ first create a component
+
+ const compo=()=>{
+  return
+  <h1>hello-bob</h1>
+ }
+
+ in APP.js
+
+ we can reuse the componants in this way
+
+  
+function App() {
+  
+  return (
+    <compo></compo>
+    <compo></compo>
+    <compo></compo>
+  )
+}
+
+export default App
+
+
+so the output will be
+
+hello-bob
+hello-bob
+hello-bob
+
+which is reusability of componant
+
+but since its static whats the use of reusing the same comp
+again and again
+
+so to make the comp dynamic
+we can pass the props to make it dynamic
+
+---------------------------------------------------------------------------------------------
+Props
+---------------------------------------------------------------------------------------------
+props or properties
+are values which are passed to make components dynamic
+
+
+so like we can make the above component dynamic by this way
+
+
+-------------------------------
+ const compo=(props)=>{  <------------- 2.we take the props in the componant
+  return
+  <h1>hello,{props.name}</h1> <------- 3. use props with .(dot)operators.
+ }
+--------------------
+function App() {
+  
+  return (
+    <compo name="bob"></compo>    <----------------- 1. we can pass the prop data (where we render the componant)
+  )
+}
+export default App
+-------------------------------
+output
+
+hello bob
+
+---------------------------------
+
+we can pass many props as needed
+
+<comp name="bob" message="hello"></comp>
+
+
+props are objects 
+and objects are not directly renderable in react
+
+we can also use DESTRUCTURING OF prop to make it more useful
+
+---------------------------------------------------------------------------------------------------
+
