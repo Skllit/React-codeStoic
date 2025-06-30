@@ -384,3 +384,4 @@ when we use the arrays as prop and when we render the data in array we see the a
 To overcome that problem we need to use the map method
 to list the array elements
 
+------------------------------------------------------------------------------------------------
