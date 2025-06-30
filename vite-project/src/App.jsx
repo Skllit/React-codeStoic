@@ -1,10 +1,10 @@
+import FirstComp from "./componants/FirstComp"
 
+ 
 function App() {
   
-
   return (
-    <div> Hellow</div>
-  
+    <FirstComp></FirstComp>
   )
 }
 

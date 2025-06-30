@@ -77,5 +77,70 @@ function App() {
 export default App
 ------------------------------------
 
+------------------------------------------------------------------------------------
+COMPONENTS
+------------------------------------------------------------------------------------
+-reusable
+-nestable
+-basic building block in react
 
 
+Components Starts with Capital letter and ends with .js or Jsx
+
+Componant is something similar to Function  which Returns a JSX
+
+we can create a Componant in two ways
+-------------------------------
+1. function COMPNAME(){
+
+return (
+  <h1>helloo</h1>
+);
+}
+---------------------------------
+2. const COMPNAME=()=>{
+  return (
+    <h1>hello</h1>
+  )
+
+}
+---------------------------------
+
+Normally compinants are created inside the src folder but conventionally we create 
+a seperate folder inside the src and create  it
+
+after Creating the Componant 
+
+we need to export that so that we can use it anywhere
+
+1. function COMPNAME(){
+
+return (
+  <h1>helloo</h1>
+);
+}
+
+export default COMPNAME;
+
+and to use that componant we need to import it
+
+import FirstComp from "./componants/FirstComp"
+
+in the App.jsx since that is where the first componant is 
+
+**** to render we can use the componat name as html tag****
+
+
+import FirstComp from "./componants/FirstComp"
+
+ 
+function App() {
+  
+  return (
+    <FirstComp></FirstComp> or <FirstComp/>
+  )
+}
+
+export default App
+
+------------------------------------------------------------------------------------------------
