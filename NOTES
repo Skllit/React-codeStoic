@@ -489,3 +489,25 @@ function World() {
 
 export default World
 
+--------------------------------------------------
+
+same thing can be done using ELEMENT variables without having to use the 
+two return which is not normally practiced
+a componant should return only one return;
+
+----------------------------------------------------------------
+
+export default function ElementVar() {
+    const dis=false;
+    let message;
+    if(dis){
+        message=<div><h1>hellow</h1></div>
+    }else{
+        message=<div><h1>world</h1></div>
+    }
+    
+  return (
+    message
+  )
+}
+--------------------------------------------------------------
