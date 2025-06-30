@@ -43,9 +43,33 @@ Create React -with vite
 5.npm run dev,npm start
 
 --------------------------------------------------------
+How it works when 
+-------------------------------------------------------
+1.Index.html
+2.Main.jsx
+3.App.jsx
 
+The main.jsx is the starting point
+where it takes the (id=root) from the index.html -which is the main html file 
+ <div id="root"></div>
 
+Renders the component called as APP.jsx insidet that root index.html
 
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <App />
+)
 
+where as the app componant--APP.jsx
+has the basic componant 
+-----------------------------
+function App() {
+  
+  return (
+    <div> Hellow</div>
+  
+  )
+}
+export default App
+------------------------------------
 
 
