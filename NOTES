@@ -144,3 +144,39 @@ function App() {
 export default App
 
 ------------------------------------------------------------------------------------------------
+JSX -JAVA SCRIPT EXTENSION
+------------------------------------------------------------------------------------------------
+jsx - javaScript + html
+
+we can make use of the javaScript inside the html using this
+
+lets name="bob"-----> js
+
+<h1>hello</h1>------> html
+
+we can use both  this in the jsx
+
+to display
+
+
+<h1>hello,{name}</h1>
+
+
+gives a output in browser as hello Bob
+
+
+so we use the {} to display the js
+
+the {} can have data,function ,terinary operations and so on
+-------------------
+function hello(){
+  return "hello";
+}
+let name ="BOB";
+
+-------------------
+{1+1}
+{hello()}
+{name}
+
+----------------------------------------------------------------------------------------
