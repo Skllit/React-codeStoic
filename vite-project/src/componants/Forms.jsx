@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
 function Forms() {
-    const [name ,setName]=useState("")
+    const [name ,setName]=useState({firstname:"",LastName:""})
 
     function handleChange(e){
-        setName(e.target.name)
+
+        setName({...name,[e.target.name]:e.target.value})
 
     }
 
@@ -12,9 +13,13 @@ function Forms() {
     <div>
         <form>
             {/* (e)=>e.target.name} */}
-            <input type='text' onChange={handleChange}>
+            <input type='text' onChange={handleChange} name="firstname" value={name.firstname}>
             
             </input>
+            <input type='text' onChange={handleChange} name="Lastname" value={name.LastName}>
+            
+            </input>
+
         </form>
       
     </div>
