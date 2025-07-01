@@ -568,5 +568,45 @@ export default Counter
 
 
 ------------------------------------------------------------------------------------------
- 
+forms
+-------------------------------------------------------------------------------------------
+import React, { useState } from 'react'
+
+function Forms() {
+    const [name ,setName]=useState("")
+
+    function handleChange(e){
+        setName(e.target.name)
+
+    }
+
+  return (
+    <div>
+        <form>
+            {/* (e)=>e.target.name} */}
+            <input type='text' onChange={handleChange}>
+            
+            </input>
+        </form>
+      
+    </div>
+  )
+}
+
+export default Forms
+--------------------------------------------
+function handleChnage(e){
+console.log(e)
+console.log(e.target.value);
+
+}
+
+1.onchange={function demo(e){
+return handlechange(e);
+}}
+
+2. onchange={(e)=>handlechange(e)} 
+
+3. {(e)=>e.target.name}
+ -------------------------------------------------------------------
 
