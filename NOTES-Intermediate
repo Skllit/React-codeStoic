@@ -201,3 +201,39 @@ function App() {
   )
 }
 ------------------------------------------------------------------------------
+we can nest the links inside alredy one 
+
+
+function About() {
+  return (
+    <div>
+      <h1>this is ABout page</h1>
+      <Outlet></Outlet>
+    </div>
+    
+  )
+}
+
+---------
+function App() {
+  
+
+  return (
+    
+    <BrowserRouter>
+
+    <Navbar></Navbar>
+    <Routes>
+      
+      <Route path="/" element={<Home></Home>}></Route>
+
+      {/* nesting links */}
+
+      <Route path="/about" element={<About></About>}>
+      <Route path="profile" element={<Profile></Profile>}></Route>
+      </Route>
+
+    </Routes>
+    </BrowserRouter>
+
+    ---------------------------------------------------------------
