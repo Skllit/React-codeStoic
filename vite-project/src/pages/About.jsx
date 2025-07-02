@@ -1,10 +1,11 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 
 function About() {
+    const {id}=useParams()
   return (
     <div>
-      <h1>this is ABout page</h1>
+      <h1>this is ABout page {id}</h1>
       <Outlet></Outlet>
     </div>
     

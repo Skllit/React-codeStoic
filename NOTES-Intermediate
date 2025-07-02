@@ -237,3 +237,158 @@ function App() {
     </BrowserRouter>
 
     ---------------------------------------------------------------
+    dynamic link navigation
+
+    <Route path="/about/:id" element={<About></About>}>
+
+    const {id}=useParams();
+
+    -----------------------------------------------------------------
+
+    UseNavigate Hook - for programmetic navigation
+    when a event occurs it navigates to different pages
+
+    ex= when we fill  login  details and click login button it navigates to home page
+
+    const navigate= useNavigate();
+
+    function onClick(){
+      navigate("/home")
+    }
+
+    <button onclick={onClick}></button>
+
+    ----------------------------------------------------------------------------------
+    passing the state using use navigate
+-------------------------------------------
+        const navigate= useNavigate();
+        const [name,setName]=useState("")
+    function onClick(){
+      navigate("/home",{state:{name}});   <----------sending the state to home page
+
+    }
+
+     <input value={name} onChange={(e)=>setName(e.target.value)}></input>
+    <button onclick={onClick}></button>
+
+
+    we can use the state in home page like this
+
+    const location=useLocation();
+    const {name} =location.state ||{};  <-------we can get the state here and also we should use empty object 
+
+    -----------------------------------------------------------------------------------------
+
+    Context api/prop drilling
+    -----------------------------
+    prop drilling
+    props=name
+
+    componant 1({props})
+        |
+        |
+    componant 2({props})
+        |
+        |
+    componant 3({props})
+    props.name
+
+    here in the propDrilling when we have to use the data which is in the
+    parent componant which has to be passed to the grandChild componant
+    we need to pass to every componant as props 
+    so if more componant are there there are more drilling to happen
+
+
+    which seeems a lot of tedious task
+
+    so to over come we use Context
+
+    constext has 
+    provider and consumer
+     where the parent componant creates a Context which as the data
+
+     and consumer uses the context to use the data directly
+
+                          context
+
+        componant1        componant 2           componant 3
+        provider````````````````````````````````consumer
+
+        here there is no need of involving of the componant 2
+
+
+  four steps involved
+  1.creating context
+  export const userContext=createContext();
+
+  2.providing context
+     <div>
+    <userContext.Provider value="Guest">  <----- providing context;we can 
+    <Checkout></Checkout>
+    </userContext.Provider>
+    
+   </div>
+
+  3.consumer Context
+      const value=useContext(userContext)
+      <h1>Checkout :{value}</h1>
+
+  4.updating context
+
+  we can provide data,object and function as context
+    1. data
+     value="jake"
+     const [name,setName]=useState("")
+    2. object
+     value={name}
+
+     while using 
+     const {}=useContext(userContext);
+
+    3. function 
+      value={name ,setName}
+    -------------------------------------------------------------------------------
+
+    advanced way
+
+    import { Children, createContext } from "react";
+
+ const userContext=createContext();
+
+function UserProvider({children}){
+   return  <userContext.Provider value="jake">
+              {children}
+           </userContext.Provider>
+}
+export {UserProvider,userContext};
+
+--------------------------
+function App() {
+
+  return (
+    
+   <div>
+  
+  <UserProvider>
+    <Checkout></Checkout>
+  </UserProvider>
+    
+    </div>
+    
+   
+  )
+}
+
+export default App
+--------------------------
+
+function Checkout() {
+    const value=useContext(userContext)
+  return (
+    <div>
+      <h1>Checkout :{value}</h1>
+    </div>
+  )
+}
+
+
