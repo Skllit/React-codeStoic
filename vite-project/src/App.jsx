@@ -6,21 +6,30 @@ import Counter from "./componants/Counter"
 import Forms from "./componants/Forms"
 import { useReducer } from "react"
  
-function reducer(state, action){
+
+function App() {
+  const [state ,dispatch]=useReducer(reducer,{count:0,incval:1})
+
+  function reducer(state, action){
   if(action.type=="inc"){
-    return state+1;
+    return {...state,count:state.count+state.incval};
+  }
+  if(action.type=="ivi"){
+    return{...state,incval:action.payload};
   }
   return state;
   
 }
-function App() {
-  const [state ,dispatch]=useReducer(reducer,0)
 
   return (
-    <div>
-          <h1>count :{state}</h1>
-    <button onClick={()=>dispatch({type:"inc",payload:1})}>inc</button>
-    </div>
+          <div>
+          <h1>count :{state.count}</h1>
+          <input
+          value={state.incval}
+          type="number" 
+          onChange={(e)=>dispatch({type:"ivi",payload:Number(e.target.value)})}></input>
+          <button onClick={()=>dispatch({type:"inc",payload:1})}>inc</button>
+          </div>
      
 
   )
