@@ -121,3 +121,46 @@ function App() {
 }
 ---------------------------------------------------------------------------------------
 
+Routes
+---------------------------------------------------------------------------------------
+
+to  Navigate between pages
+
+normally webistes have multiple pages 
+which is server side rendering
+
+but in react we use SPA single page rendering
+which is on the client side rendering
+
+so it will be little boaring in the ui point of view
+
+so we gonna use router 
+
+--------------------------------------
+npm install react-router-dom@6
+
+--------------------------------------
+import { BrowserRouter,Route, Routes } from "react-router-dom"
+
+****Note u have to import Routes not router*****
+
+1.Create Two components inside Src/pages 
+a.Home.jsx
+b.About.jsx
+
+
+------------------------------------------------------
+function App() {
+  
+
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home></Home>}></Route>
+      <Route path="/about" element={<About></About>}></Route>
+    </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
