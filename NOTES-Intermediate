@@ -20,7 +20,7 @@ UseReducer hooks
   }
 }
 
-3.onclick={()=>dispatch({type:"inc",payload:})}   <--- Dispatch action
+3.onclick={()=>dispatch({type:"inc",payload:})}   <--- Dispatch action object
 
 
 1.state-state variable
