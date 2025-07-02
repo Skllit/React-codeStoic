@@ -1,36 +1,30 @@
-import FirstComp from "./componants/FirstComp"
-import Fruits from "./componants/Fruits"
-import Coco from "./componants/Coco"
-import ElementVar from "./componants/ElementVar"
-import Counter from "./componants/Counter"
-import Forms from "./componants/Forms"
-import { useReducer } from "react"
- 
 
+import { useReducer, useState } from "react"
+ 
 function App() {
-  const [state ,dispatch]=useReducer(reducer,{count:0,incval:1})
+  const [state ,dispatch]=useReducer(reducer,{balance:0})
+  const [amount,setAmount]=useState(0)
 
   function reducer(state, action){
-  if(action.type=="inc"){
-    return {...state,count:state.count+state.incval};
-  }
-  if(action.type=="ivi"){
-    return{...state,incval:action.payload};
-  }
-  return state;
+    if(action.type=="add"){
+      return {...state,balance:state.balance+action.payload}
+    }
+    if(action.type=="del"){
+      return {...state,balance:state.balance-action.payload}
+    }
+    return state;
   
 }
 
   return (
-          <div>
-          <h1>count :{state.count}</h1>
-          <input
-          value={state.incval}
-          type="number" 
-          onChange={(e)=>dispatch({type:"ivi",payload:Number(e.target.value)})}></input>
-          <button onClick={()=>dispatch({type:"inc",payload:1})}>inc</button>
-          </div>
-     
+    <div>
+      <h1> Balance:{ state.balance}</h1>
+      <input type="number"
+       value={amount} onChange={(e)=>setAmount(e.target.value)}></input>
+       <button onClick={()=>dispatch({type:"add",payload:Number(amount)})}>Deposit</button>
+       <button onClick={()=>dispatch({type:"del",payload:Number(amount)})}>WithDrawl</button>
+    </div>
+        
 
   )
 }
