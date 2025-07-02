@@ -1,0 +1,35 @@
+extra notes:
+
+Hooks
+use hooks inside components
+hooks performs action
+
+Children componets
+
+if we Wrap a Componant inside a container we use children
+to render the child component inside the wrapped container
+
+----------------------------------------------------------------------------
+UseReducer hooks
+
+1.const [state,dispatch]=useReducer(reducer,0)
+2.function reducer(){                             <---- action handled by reducer
+  if(action.type=="inc")
+  {
+    return state+action.payload
+  }
+}
+
+3.onclick={()=>dispatch({type:"inc",payload:})}   <--- Dispatch action
+
+
+1.state-state variable
+2.dispatch-dispatcher 
+3.reducer- reducer function 
+  a. function reducer(state,Action){
+
+  }
+
+4.0- initial value for state
+
+
